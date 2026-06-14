@@ -545,3 +545,164 @@ svg path {
     padding-right: 32px;
   }
 }
+
+
+/* Slide mobile menu final behavior */
+.mobile-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: none;
+  background-color: rgba(11, 34, 3, 0.35);
+}
+
+.mobile-menu-inner {
+  transform: translateX(100%);
+  transition: transform var(--transition);
+}
+
+.mobile-menu.is-open {
+  pointer-events: auto;
+}
+
+.mobile-menu.is-open .mobile-menu-inner {
+  transform: translateX(0);
+}
+
+.mobile-menu-close {
+  transition: color var(--transition), transform var(--transition);
+}
+
+.mobile-menu-close:hover,
+.mobile-menu-close:focus {
+  color: var(--light-green);
+  transform: rotate(90deg);
+}
+
+
+
+
+/* Final correction: Order button inside dropdown mobile menu */
+.mobile-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.mobile-order-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  min-width: 0;
+  max-width: 100%;
+  margin: 36px 0 0 auto;
+  padding: 12px 28px;
+  border-radius: 12px;
+  background-color: var(--accent-green);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(11, 34, 3, 0.18);
+  transition:
+    background-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.mobile-order-button:hover,
+.mobile-order-button:focus {
+  background-color: #184d09;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(11, 34, 3, 0.24);
+}
+
+
+/* FINAL: keep Order visible inside mobile dropdown */
+.mobile-menu-inner {
+  padding: 28px 40px 32px;
+  overflow-y: auto;
+}
+
+.mobile-menu-close {
+  margin-bottom: 32px;
+}
+
+.mobile-logo {
+  margin-bottom: 36px;
+}
+
+.mobile-nav {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.mobile-nav-list {
+  gap: 22px;
+}
+
+.mobile-nav-link {
+  font-size: 24px;
+  line-height: 1.15;
+}
+
+.mobile-order-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  min-width: 0;
+  max-width: 100%;
+  margin: 28px 0 0 auto;
+  padding: 12px 28px;
+  border-radius: 12px;
+  background-color: var(--accent-green);
+  color: var(--white);
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(11, 34, 3, 0.18);
+  transition:
+    background-color var(--transition),
+    transform var(--transition),
+    box-shadow var(--transition);
+}
+
+.mobile-order-button:hover,
+.mobile-order-button:focus {
+  background-color: #184d09;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 16px rgba(11, 34, 3, 0.24);
+}
+
+@media screen and (max-height: 720px) {
+  .mobile-menu-inner {
+    padding-top: 22px;
+    padding-bottom: 24px;
+  }
+
+  .mobile-menu-close {
+    margin-bottom: 22px;
+  }
+
+  .mobile-logo {
+    margin-bottom: 26px;
+  }
+
+  .mobile-nav-list {
+    gap: 16px;
+  }
+
+  .mobile-nav-link {
+    font-size: 22px;
+  }
+
+  .mobile-order-button {
+    margin-top: 22px;
+  }
+}

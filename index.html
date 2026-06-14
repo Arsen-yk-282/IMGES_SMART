@@ -90,10 +90,10 @@
             <li><a class="mobile-nav-link" href="#faq">FAQ</a></li>
             <li><a class="mobile-nav-link" href="#contacts">Contacts</a></li>
           </ul>
-        </nav>
 
-        <a class="mobile-order-button" href="#order">Order</a>
-      </div>
+          <a class="mobile-order-button" href="#order">Order</a>
+</nav>
+</div>
     </div>
 
     <footer class="site-footer" id="contacts">
@@ -167,5 +167,33 @@
         </div>
       </div>
     </footer>
+
+    <script>
+      const menuButton = document.querySelector(".menu-button");
+      const mobileMenu = document.querySelector(".mobile-menu");
+      const closeButton = document.querySelector(".mobile-menu-close");
+
+      function openMobileMenu() {
+        mobileMenu.classList.add("is-open");
+      }
+
+      function closeMobileMenu() {
+        mobileMenu.classList.remove("is-open");
+      }
+
+      menuButton.addEventListener("click", openMobileMenu);
+      menuButton.addEventListener("mouseenter", openMobileMenu);
+      menuButton.addEventListener("focus", openMobileMenu);
+
+      closeButton.addEventListener("click", closeMobileMenu);
+      mobileMenu.addEventListener("mouseleave", closeMobileMenu);
+
+      document.addEventListener("keydown", (event) => {
+        if (event.key === "Escape") {
+          closeMobileMenu();
+        }
+      });
+    </script>
+
   </body>
 </html>
